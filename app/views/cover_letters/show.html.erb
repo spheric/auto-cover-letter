@@ -1,0 +1,26 @@
+<%= turbo_stream_from @cover_letter, :content %>
+<div class="mb-2">
+  <%= render PageHeaderComponent.new do %>
+    <%= render PageTitleComponent.new(
+      title: "Cover Letter")
+    %>
+
+    <%= render PageDescriptionComponent.new(
+      description: "Your cover letter details."
+      )
+    %>
+  <% end %>
+</div>
+
+<div class="flex space-x-5 mb-2">
+
+  <div class='w-1/3' >
+    <%= render CoverLetterFormComponent.new(job_description: @cover_letter.job_description)%>
+  </div>
+
+  <div id='cover-letter-content' class='w-2/3' >
+    <% cover_letter_component = CoverLetterComponent.new(cover_letter: @cover_letter) %>
+    <%= render SpinnerComponent.new(!cover_letter_component.render?) %>
+    <%= render cover_letter_component %>
+  </div>
+</div>

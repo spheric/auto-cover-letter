@@ -8,10 +8,18 @@ module.exports = {
     './app/components/**/*'
   ],
   theme: {
+    container: {
+      center: true,
+      padding: '2rem'
+    },
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
+      colours: {
+        primary: '#264653',
+        secondary: '#e76f51'
+      }
     },
   },
   plugins: [

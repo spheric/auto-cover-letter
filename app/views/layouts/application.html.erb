@@ -9,10 +9,18 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <% if Rails.env.development? %>
+      <%= javascript_include_tag "hotwire-livereload", defer: true %>
+    <% end %>
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="container relative mx-m mt-8 px-4">
+      <%= turbo_frame_tag "cover_letter_count", target: "_top" do %>
+        <%= render CoverLetterCountComponent.new(
+          cover_letter_count: (session[:cover_letters] || []).count
+        ) %>
+      <% end %>
       <%= yield %>
     </main>
   </body>

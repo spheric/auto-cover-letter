@@ -1,0 +1,18 @@
+<div class="space-y-5" >
+  <div class="mb-2">
+    <%= render PageHeaderComponent.new do %>
+      <%= render PageTitleComponent.new(
+        title: "AI Cover Letter")
+      %>
+
+      <%= render PageDescriptionComponent.new(
+        description: "Provide some information about a job and we will generate a cover letter using artificial intelligence."
+        )
+      %>
+    <% end %>
+  </div>
+
+  <div class="mb-2">
+    <%= render PrimaryButtonComponent.new(text: 'Start', path: new_job_description_path) %>
+  </div>
+</div>

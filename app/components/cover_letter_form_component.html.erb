@@ -1,0 +1,19 @@
+<div class="flex flex-col">
+  <%= form_with model: @job_description, url: cover_letters_path, method: :post, class: 'space-y-2' do |form| %>
+    <div class='flex flex-col md:w-2/3 space-y-2'>
+      <%= render LabelComponent.new(form: form, name: :job_title) %>
+      <%= render TextFieldComponent.new(form: form, name: :job_title) %>
+    </div >
+    <div class='flex flex-col space-y-2'>
+      <%= render LabelComponent.new(form: form, name: :company_information) %>
+      <%= render TextAreaComponent.new(form: form, name: :company_information) %>
+    </div>
+    <div class='flex flex-col space-y-2'>
+      <%= render LabelComponent.new(form: form, name: :duties) %>
+      <%= render TextAreaComponent.new(form: form, name: :duties) %>
+    </div >
+    <div class='text-center'>
+      <%= render SubmitComponent.new(form: form) %>
+    </div >
+  <% end %>
+</div>

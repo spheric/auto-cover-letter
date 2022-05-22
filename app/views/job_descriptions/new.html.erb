@@ -1,0 +1,14 @@
+<div class="mb-2">
+  <%= render PageHeaderComponent.new do %>
+    <%= render PageTitleComponent.new(
+      title: "Upload Job Description")
+    %>
+
+    <%= render PageDescriptionComponent.new(
+      description: "Enter a job title, company information and duties required. Direct copy is fine, no formatting required."
+      )
+    %>
+  <% end %>
+</div>
+
+<%= render CoverLetterFormComponent.new(job_description: @job_description) %>
