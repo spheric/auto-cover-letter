@@ -48,6 +48,7 @@ gem 'bootsnap', require: false
 gem 'ruby-limiter'
 gem 'sidekiq'
 gem 'view_component'
+gem "rails_heroicon"
 
 # Use Sass to process CSS
 # gem "sassc-rails"

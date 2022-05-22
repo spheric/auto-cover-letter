@@ -16,10 +16,18 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
+      animation: {
+        fade: 'fadeOut 5s ease-in-out',
+      },
       colours: {
         primary: '#264653',
         secondary: '#e76f51'
-      }
+      },
+      keyframes: theme => ({
+        fadeOut: {
+          '100%': { backgroundColor: theme('colors.transparent') }
+        },
+      }),
     },
   },
   plugins: [

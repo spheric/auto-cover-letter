@@ -1,0 +1,10 @@
+<div>
+  <% flash.each do |flash_type, message| %>
+    <div class='bg-red-800 lg:w-2/6 animate-fade mx-auto text-white text-center rounded-lg p-4 z-50'
+         data-controller="removals"
+         data-action="animationend->removals#remove"
+    >
+      <%= message %>
+    </div>
+  <% end %>
+</div>

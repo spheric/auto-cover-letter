@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :job_descriptions, only: [:new]
-  resources :cover_letters, only: %i[create show]
+  resources :cover_letters, only: %i[create show index]
 
   require 'sidekiq/web'
 

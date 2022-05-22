@@ -16,6 +16,8 @@
 
   <body>
     <main class="container relative mx-m mt-8 px-4">
+      <%= render FlashComponent.new(flash: flash) %>
+
       <%= turbo_frame_tag "cover_letter_count", target: "_top" do %>
         <%= render CoverLetterCountComponent.new(
           cover_letter_count: (session[:cover_letters] || []).count
