@@ -85,3 +85,4 @@ production:
   database: auto_coverletter_production
   username: auto_coverletter
   password: <%= ENV["AUTO_COVERLETTER_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
