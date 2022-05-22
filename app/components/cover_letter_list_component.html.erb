@@ -1,5 +1,5 @@
 <div>
-  <%= @cover_letters.each do |cover_letter| %>
+  <% @cover_letters.each do |cover_letter| %>
     <%= render CoverLetterComponent.new(cover_letter: cover_letter) do %>
       <%= render PrimaryButtonComponent.new(path: cover_letter_path(cover_letter), text: 'Show')%>
     <% end %>
