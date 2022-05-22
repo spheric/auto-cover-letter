@@ -13,17 +13,17 @@ class CoverLetterCreateCommand
 
   # move to service
   def open_ai_create_cover_letter_html!
-    response = open_ai_client.completions(engine: 'text-davinci-001', parameters: { prompt: prompt, max_tokens: 250 })
+    response = open_ai_client.completions(prompt: prompt)
 
     split_response = response.parsed_response['choices'].map { |c| c['text'].split("\n") }
-    html_split_response = split_response.flatten.reject(&:empty?).map { |ele| "<p>#{ele}</p>" }.push('<div').unshift('</div>')
+    html_split_response = split_response.flatten.reject(&:empty?).map do |ele|
+      "<p>#{ele}</p>"
+    end.push('<div').unshift('</div>')
     html_split_response.join
   end
 
   def open_ai_client
-    OpenAI::Client.new(
-      access_token: Rails.application.credentials.openai_access_token!
-    )
+    OpenAiClient.new
   end
 
   def prompt

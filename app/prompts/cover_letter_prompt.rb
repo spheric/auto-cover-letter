@@ -9,7 +9,7 @@ class CoverLetterPrompt
   end
 
   def prompt
-    [ leading_question_part, job_title_part, company_information_part, duties_part, '.', "\n" ].join("\n")
+    [leading_question_part, job_title_part, company_information_part, duties_part, '.', "\n"].join("\n")
   end
 
   private

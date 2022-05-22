@@ -241,6 +241,7 @@ GEM
       rubocop (>= 1.7.0, < 2.0)
     rubocop-rspec (2.11.1)
       rubocop (~> 1.19)
+    ruby-limiter (2.2.2)
     ruby-openai (1.4.0)
       dotenv (~> 2.7.6)
       httparty (>= 0.18.1, < 0.21.0)
@@ -311,6 +312,7 @@ DEPENDENCIES
   rubocop
   rubocop-rails
   rubocop-rspec
+  ruby-limiter
   ruby-openai
   selenium-webdriver
   sidekiq
