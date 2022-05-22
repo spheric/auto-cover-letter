@@ -35,7 +35,9 @@ class CoverLettersController < ApplicationController
 
   def edit; end
 
-  def index; end
+  def index
+    @cover_letters = CoverLetter.where(id: session[:cover_letters]) || CoverLetter.none
+  end
 
   def can_see_cover_letter?(cover_letter)
     cover_letter && session[:cover_letters].include?(cover_letter.id)

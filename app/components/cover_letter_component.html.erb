@@ -1,5 +1,7 @@
 <div class='lg:space-y-10' data-controller='clipboard toggle'>
-  <div class='float-right' >
+  <div class='float-right space-x-1' >
+    <%= content %>
+
     <%= render PrimaryButtonComponent.new(action: 'click->clipboard#copy click->toggle#toggle') do %>
         <%= heroicon "clipboard-copy", class: 'inline-block', data: { 'toggle-target' => 'show' } %>
         <%= heroicon "check", class: 'inline-block hidden', data: { 'toggle-target' => 'hide' } %>

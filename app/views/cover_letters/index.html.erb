@@ -4,4 +4,6 @@
       title: "Your Cover Letters")
     %>
   <% end %>
+
+  <%= render CoverLetterListComponent.new(cover_letters: @cover_letters) %>
 </div>
