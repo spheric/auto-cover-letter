@@ -18,6 +18,7 @@ module.exports = {
       },
       animation: {
         fade: 'fadeOut 5s ease-in-out',
+        spinSlowPingPulse: 'spin 2s ease-in 2s infinite alternate, pulse 2s ease-in infinite, ping 2s ease-in infinite'
       },
       colours: {
         primary: '#264653',
@@ -26,7 +27,7 @@ module.exports = {
       keyframes: theme => ({
         fadeOut: {
           '100%': { backgroundColor: theme('colors.transparent') }
-        },
+        }
       }),
     },
   },
