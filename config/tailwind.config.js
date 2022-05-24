@@ -18,7 +18,7 @@ module.exports = {
       },
       animation: {
         fade: 'fadeOut 5s ease-in-out',
-        spinSlowPingPulse: 'spin 2s ease-in 2s infinite alternate, pulse 2s ease-in infinite, ping 2s ease-in infinite'
+        spinSlowPingPulse: 'spin 2s ease-in 2s infinite alternate, pulse 10s ease-in 3, ping 2s ease-in 3'
       },
       colours: {
         primary: '#264653',
