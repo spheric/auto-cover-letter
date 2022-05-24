@@ -11,7 +11,7 @@ class PrimaryButtonComponent < ApplicationComponent
     data = {}
     data.merge!(action: @action) if @action
 
-    link_to @path, data: data, class: 'bg-orange-500 px-5 py-3 border border-transparent text-base font-medium rounded-md text-white' do
+    link_to @path, data: data, class: 'z-50 bg-orange-500 px-5 py-3 border border-transparent text-base font-medium rounded-md text-white' do
       @text || content
     end
   end
