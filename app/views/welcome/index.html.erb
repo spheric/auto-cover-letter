@@ -16,15 +16,9 @@
     <%= render PrimaryButtonComponent.new(text: 'Start', path: new_job_description_path) %>
   </div>
 
-  <div class="flex">
-    <%= render LoudMarketingMsgGroupComponent.new(col: 9, color: 'rose', text: 'Free', color_gap: 200) %>
-  </div>
-
-  <div class="flex justify-center">
-    <%= render LoudMarketingMsgGroupComponent.new(col: 9, color: 'orange', text: 'cover', color_gap: 200) %>
-  </div>
-
-  <div class="flex">
-    <%= render LoudMarketingMsgGroupComponent.new(col: 9, color: 'yellow', text: 'letter', color_gap: 200) %>
+  <div class="flex flex-col -space-y-20">
+    <%= render LoudMarketingMsgGroupComponent.new(col: 9, color: 'rose', text: 'Free', color_gap: 200, animate: false) %>
+    <%= render LoudMarketingMsgGroupComponent.new(col: 9, color: 'orange', text: 'cover', color_gap: 200, animate: false) %>
+    <%= render LoudMarketingMsgGroupComponent.new(col: 9, color: 'yellow', text: 'letter', color_gap: 200, animate: false) %>
   </div>
 </div>
