@@ -44,7 +44,7 @@ class CoverLettersController < ApplicationController
   end
 
   def job_description_params
-    params.require(:job_description).permit(:job_title, :company_information, :duties, :url)
+    params.require(:job_description).permit(:job_title, :company_name, :duties, :url, :skills, :experience)
   end
 
   def cover_letter_params

@@ -5,12 +5,25 @@
       <%= render TextFieldComponent.new(form: form, name: :job_title) %>
     </div >
     <div class='flex flex-col space-y-2'>
-      <%= render LabelComponent.new(form: form, name: :company_information) %>
-      <%= render TextAreaComponent.new(form: form, name: :company_information) %>
+      <%= render LabelComponent.new(form: form, name: :company_name) %>
+      <%= render TextFieldComponent.new(form: form, name: :company_name) %>
     </div>
+
     <div class='flex flex-col space-y-2'>
       <%= render LabelComponent.new(form: form, name: :duties) %>
       <%= render TextAreaComponent.new(form: form, name: :duties) %>
+    </div >
+
+    <%= render DividerComponent.new(text: 'You') %>
+
+    <div class='flex flex-col space-y-2'>
+      <%= render LabelComponent.new(form: form, name: :experience, text: 'My Experience (years)') %>
+      <%= render TextFieldComponent.new(form: form, name: :experience) %>
+    </div >
+
+    <div class='flex flex-col space-y-2'>
+      <%= render LabelComponent.new(form: form, name: :skills, text: 'My Skills') %>
+      <%= render TextAreaComponent.new(form: form, name: :skills) %>
     </div >
     <div class='text-center'>
       <%= render SubmitComponent.new(form: form) %>

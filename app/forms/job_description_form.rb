@@ -1,9 +1,9 @@
 class JobDescriptionForm
   include ActiveModel::Model
 
-  validates :company_information, :job_title, :duties, presence: true
+  validates :company_name, :job_title, :duties, :skill, :experience, presence: true
 
-  attr_accessor :job_title, :company_information, :duties
+  attr_accessor :job_title, :company_name, :duties, :experience, :skills
 
   def initialize(params = {})
     super(params)
@@ -12,8 +12,10 @@ class JobDescriptionForm
   def save!
     JobDescription.create!(
       duties: duties[0..400],
-      company_information: company_information[0..400],
-      job_title: job_title[0..100]
+      company_name: company_name[0..100],
+      job_title: job_title[0..100],
+      experience: experience[0..50],
+      skills: skills[0..350]
     )
   end
 end

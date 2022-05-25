@@ -1,6 +1,6 @@
 <div class='lg:space-y-10' data-controller='clipboard toggle'>
   <div class='float-right space-x-1' >
-    <%= content %>
+    <%= show_button %>
 
     <%= render PrimaryButtonComponent.new(action: 'click->clipboard#copy click->toggle#toggle') do %>
         <%= heroicon "clipboard-copy", class: 'inline-block', data: { 'toggle-target' => 'show' } %>
@@ -11,4 +11,7 @@
   <div class='select-all' data-clipboard-target='source'>
     <%= @cover_letter.content %>
   </div>
+
+  <%= divider %>
 </div>
+
