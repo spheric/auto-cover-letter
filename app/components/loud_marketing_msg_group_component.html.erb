@@ -1,5 +1,5 @@
-    <div class="w-1/5 grid grid-rows-1 grid-cols-<%= @col %>">
-      <% @start_to_stop_color_range.each do |color_number| %>
-        <%= render LoudMarketingMsgComponent.new(text: @text, color: "text-#{ @color }-#{ color_number }") %>
-      <% end %>
-    </div>
+<div class="w-1/6 grid grid-rows-1 <%= COLS[@col] %>">
+  <% @start_to_stop_color_range.each do |color_number| %>
+    <%= render LoudMarketingMsgComponent.new(text: @text, color: COLORS[color_number][@color]) %>
+  <% end %>
+</div>
