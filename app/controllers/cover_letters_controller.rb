@@ -21,13 +21,17 @@ class CoverLettersController < ApplicationController
     redirect_to @cover_letter
   end
 
+  def full_index
+    @cover_letters = CoverLetter.all
+  end
+
   def show
     @cover_letter = CoverLetter.find_by(id: params[:id])
 
     if can_see_cover_letter?(@cover_letter)
       render 'show'
     else
-      redirect_to :root, status: :unauthorized, notice: 'You are not authorized to view this cover letter.'
+      redirect_to :root, notice: 'You are not authorized to view this cover letter.'
     end
   end
 

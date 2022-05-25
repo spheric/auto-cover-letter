@@ -1,0 +1,9 @@
+<div class="mb-2">
+  <%= render PageHeaderComponent.new do %>
+    <%= render PageTitleComponent.new(
+      title: "Secret Full")
+    %>
+  <% end %>
+
+  <%= render CoverLetterListComponent.new(cover_letters: @cover_letters) %>
+</div>

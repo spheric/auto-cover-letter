@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :job_descriptions, only: [:new]
   resources :cover_letters, only: %i[create show index]
 
+  get '/secret_index', to: 'cover_letters#full_index'
+
   require 'sidekiq/web'
 
   Sidekiq::Web.use(Rack::Auth::Basic) do |username, password|
