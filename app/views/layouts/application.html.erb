@@ -14,8 +14,8 @@
     <% end %>
   </head>
 
-  <body>
-    <main class="container relative mx-m mt-8 px-4">
+  <body class="h-screen bg-gradient-to-r from-slate-600 to-slate-800 text-white">
+    <main class="container  relative mx-m mt-8 px-4">
       <%= render FlashComponent.new(flash: flash) %>
 
       <%= turbo_frame_tag "cover_letter_count", target: "_top" do %>

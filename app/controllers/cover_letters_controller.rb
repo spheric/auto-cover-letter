@@ -37,7 +37,9 @@ class CoverLettersController < ApplicationController
 
   def update; end
 
-  def edit; end
+  def edit
+    @cover_letter = CoverLetter.find_by(id: params[:id])
+  end
 
   def index
     @cover_letters = CoverLetter.where(id: session[:cover_letters]) || CoverLetter.none

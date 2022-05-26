@@ -1,4 +1,4 @@
-<div class="w-9 grid grid-rows-1 <%= COLS[@col] %>">
+<div class="w-4 lg:w-9 grid grid-rows-1 <%= COLS[@col] %>">
   <% @start_to_stop_color_range.each do |color_number| %>
     <%= render LoudMarketingMsgComponent.new(text: @text, color: COLORS[color_number][@color], animate: @animate) %>
   <% end %>

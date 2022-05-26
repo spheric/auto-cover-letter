@@ -22,7 +22,9 @@
   </div>
 
   <div id='cover-letter-content' class='w-100 lg:w-2/3' >
-    <% cover_letter_component = CoverLetterComponent.new(cover_letter: @cover_letter) %>
+    <% cover_letter_component = CoverLetterComponent.new(cover_letter: @cover_letter) do |c| %>
+    <% c.edit_button %>
+    <% end %>
     <%= render SpinnerComponent.new(!cover_letter_component.render?) %>
     <%= render cover_letter_component %>
   </div>

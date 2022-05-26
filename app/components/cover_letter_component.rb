@@ -3,6 +3,7 @@
 class CoverLetterComponent < ApplicationComponent
   renders_one :divider, "DividerComponent"
   renders_one :show_button, "PrimaryButtonComponent"
+  renders_one :edit_button, "PrimaryButtonComponent"
 
   def initialize(cover_letter:)
     @cover_letter = cover_letter
