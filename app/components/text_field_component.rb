@@ -7,6 +7,6 @@ class TextFieldComponent < ApplicationComponent
   end
 
   def call
-    @form.text_field @name, class: 'rounded'
+    @form.text_field @name, class: 'rounded text-black'
   end
 end

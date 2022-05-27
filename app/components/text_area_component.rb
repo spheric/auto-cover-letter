@@ -7,6 +7,6 @@ class TextAreaComponent < ApplicationComponent
   end
 
   def call
-    @form.text_area @name, maxlength: 400, class: 'rounded h-48'
+    @form.text_area @name, maxlength: 400, class: 'rounded h-48 text-black'
   end
 end
