@@ -22,10 +22,10 @@
   </div>
 
   <div id='cover-letter-content' class='w-100 lg:w-2/3' >
-    <% cover_letter_component = CoverLetterComponent.new(cover_letter: @cover_letter) do |c| %>
-    <% c.edit_button %>
-    <% end %>
+    <% cover_letter_component = CoverLetterComponent.new(cover_letter: @cover_letter) %>
     <%= render SpinnerComponent.new(!cover_letter_component.render?) %>
-    <%= render cover_letter_component %>
+    <%= render cover_letter_component do |c| %>
+    <%= c.edit_button(path: edit_cover_letter_path(@cover_letter), text: 'Edit') %>
+    <% end %>
   </div>
 </div>

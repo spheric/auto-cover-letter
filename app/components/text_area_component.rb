@@ -1,12 +1,10 @@
 # frozen_string_literal: true
 
 class TextAreaComponent < ApplicationComponent
-  def initialize(form:, name:)
+  def initialize(form:, name:, counter: true, max_length: 400)
     @form = form
     @name = name
-  end
-
-  def call
-    @form.text_area @name, maxlength: 400, class: 'rounded h-48 text-black'
+    @counter = counter
+    @max_length = max_length
   end
 end

@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  helper ActionText::Engine.helpers
   before_action :set_session
 
   private
