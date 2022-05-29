@@ -28,14 +28,30 @@ class CoverLettersController < ApplicationController
   def show
     @cover_letter = CoverLetter.find_by(id: params[:id])
 
-    if can_see_cover_letter?(@cover_letter)
+    if can_action_cover_letter?(@cover_letter)
       render 'show'
     else
       redirect_to :root, notice: 'You are not authorized to view this cover letter.'
     end
   end
 
-  def update; end
+  def update
+    @cover_letter = CoverLetter.find_by(id: params[:id])
+
+    if can_action_cover_letter?(@cover_letter)
+      respond_to do |format|
+        if @cover_letter.update(cover_letter_params)
+          format.html { render :show }
+          format.json { render :show, status: :ok, location: @cover_letter }
+        else
+          format.html { render :edit, status: :unprocessable_entity }
+          format.json { render json: @cover_letter.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      redirect_to :root, notice: 'You are not authorized to edit this cover letter.'
+    end
+  end
 
   def edit
     @cover_letter = CoverLetter.find_by(id: params[:id])
@@ -45,7 +61,7 @@ class CoverLettersController < ApplicationController
     @cover_letters = CoverLetter.where(id: session[:cover_letters]) || CoverLetter.none
   end
 
-  def can_see_cover_letter?(cover_letter)
+  def can_action_cover_letter?(cover_letter)
     cover_letter && session[:cover_letters].include?(cover_letter.id)
   end
 

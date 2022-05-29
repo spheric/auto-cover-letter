@@ -1,8 +1,12 @@
-<div class='lg:space-y-10' data-controller='clipboard toggle'>
-  <div class='float-right space-x-1' >
-    <%= show_button %>
+<%= turbo_stream_from @cover_letter, :show_button, @cover_letter.id %>
 
-    <%= render PrimaryButtonComponent.new(action: 'click->clipboard#copy click->toggle#toggle') do %>
+<div class='lg:space-y-10' data-controller='clipboard hide toggle'>
+  <div class='float-right space-x-1' >
+    <%= turbo_frame_tag "cover_letter#{@cover_letter.id}_show", target: "_top" do %>
+      <%= show_button %>
+    <% end %>
+
+    <%= render PrimaryButtonComponent.new(action: 'click->clipboard#copy click->toggle#toggle', data: { hide: true, 'hide-target' => :source }) do %>
         <%= heroicon "clipboard-copy", class: 'inline-block', data: { 'toggle-target' => 'show' } %>
         <%= heroicon "check", class: 'inline-block hidden', data: { 'toggle-target' => 'hide' } %>
     <% end %>
@@ -10,10 +14,13 @@
     <%= edit_button %>
   </div>
 
-  <div class='select-all' data-clipboard-target='source'>
-    <%= @cover_letter.content %>
-  </div>
+  <%= turbo_frame_tag "cover_letter#{@cover_letter.id}_edit" do %>
+    <div class='select-all' data-clipboard-target='source'>
+      <%= @cover_letter.content %>
+    </div>
+  <% end %>
 
-  <%= divider %>
+    <%= divider %>
+  </div>
 </div>
 

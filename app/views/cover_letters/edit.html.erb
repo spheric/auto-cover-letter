@@ -1,1 +1,8 @@
-<%= render CoverLetterContentFormComponent.new(cover_letter: @cover_letter) %>
+<%= turbo_frame_tag "cover_letter#{@cover_letter.id}_edit" do %>
+  <%= form_with model: @cover_letter do |form| %>
+    <div class="field">
+      <%= form.rich_text_area :content %>
+      <%= render SubmitComponent.new(form: form, text: 'Update Cover Letter') %>
+    </div>
+  <% end %>
+<% end %>

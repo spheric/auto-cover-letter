@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 class SubmitComponent < ApplicationComponent
-  def initialize(form:)
+  def initialize(form:, text:)
     @form = form
+    @text = text
   end
 
   CLASSES = %w[
@@ -20,6 +21,6 @@ class SubmitComponent < ApplicationComponent
   ]
 
   def call
-    @form.submit 'Create Cover Letter', class: CLASSES
+    @form.submit @text, class: CLASSES
   end
 end

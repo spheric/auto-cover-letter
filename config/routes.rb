@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :job_descriptions, only: [:new]
-  resources :cover_letters, only: %i[create show index edit]
+  resources :cover_letters, only: %i[create show index edit update]
 
   get '/secret_index', to: 'cover_letters#full_index'
 
