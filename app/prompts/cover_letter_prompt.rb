@@ -15,7 +15,7 @@ class CoverLetterPrompt
   private
 
   def leading_question_part
-    'Write a fully formatted professional cover letter letter for:'
+    'Write a fully formatted professional cover letter focussing on my skills for:'
   end
 
   def duties_part
